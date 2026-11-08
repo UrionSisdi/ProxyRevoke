@@ -1,0 +1,4 @@
+# Copy to config.local and fill in your own settings. Never commit config.local.
+PROXY_HOST=192.0.2.1
+PROXY_PORT=3128
+PROXY_URL='http://USERNAME:PASSWORD@192.0.2.1:3128'

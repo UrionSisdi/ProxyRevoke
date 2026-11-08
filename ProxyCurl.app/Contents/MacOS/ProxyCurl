@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+CONFIG="$HOME/Library/Application Support/ProxyRevoke/config.local"
+if [ ! -r "$CONFIG" ]; then
+    echo "Proxy settings missing: $CONFIG. Run scripts/install.sh first." >&2
+    exit 1
+fi
+. "$CONFIG"
+: "${PROXY_URL:?Set PROXY_URL in config.local}"
+exec /usr/bin/curl --proxy "$PROXY_URL" "$@"
